@@ -1,0 +1,34 @@
+
+/* Custom Swiper Pagination */
+.swiper-pagination-bullet {
+    background-color: #ffffff !important;
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #fcfcfc !important;
+    transform: scale(1.2);
+  }
+
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FFD71B !important;
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px; 
+  font-weight: bold;
+}
+
+  
