@@ -1,14 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import '../../CSS/font.css'
 import '../../CSS/nav.css'
+import NavEnd from './NavEnd';
 
 const Navbar = () => {
+  const [showNavbar, setShowNavbar] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (!hasScrolled && currentScrollY > 0) {
+        setHasScrolled(true);
+      }
+
+      if (currentScrollY === 0) {
+        setShowNavbar(false);
+      } else if (currentScrollY < lastScrollY) {
+        setShowNavbar(true);
+      } else if (currentScrollY > lastScrollY) {
+        setShowNavbar(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY, hasScrolled]);
     return (
-        <div className="w-full fixed z-10 bg-black/60  text-white ">
-           <div className='navbar max-w-7xl mx-auto'>
+        <div className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      } bg-white shadow`}>
+           <div className='navbar max-w-7xl mx-auto px-4'>
             <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,28 +64,19 @@ const Navbar = () => {
                         <><NavLink to='/blog' className=''>Blog</NavLink></>
                     </ul>
                     </div>
-                    <Link to='/' className="text-2xl lg:text-4xl font-barlow font-semibold hover:text-[#FFD71B]">Petuk Palace</Link>
+                    <Link to='/' className="text-2xl lg:text-4xl font-barlow font-semibold hover:text-gray-400 text-gray-600">Petuk Palace</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-xl font-barlow">
-                        <><NavLink to='/' className='mr-5 hover:text-[#FFD71B]'>Home</NavLink></>
-                        <><NavLink to='/reservation' className='mr-8 hover:text-[#FFD71B]'>Reservation</NavLink></>
-                        <><NavLink to='/menu' className='mr-8 hover:text-[#FFD71B]'>Menu</NavLink></>
-                        <><NavLink to='/about' className='mr-8 hover:text-[#FFD71B]'>About us</NavLink></>
-                        <><NavLink to='/blog' className='hover:text-[#FFD71B]'>Blog</NavLink></>
+                    <ul className="menu menu-horizontal text-lg font-barlow text-gray-700 uppercase">
+                        <><NavLink to='/' className='mr-8 hover:text-gray-900 '>Home</NavLink></>
+                        <><NavLink to='/reservation' className='mr-8 hover:text-gray-900 '>Reservation</NavLink></>
+                        <><NavLink to='/menu' className='mr-8 hover:text-gray-900 '>Menu</NavLink></>
+                        <><NavLink to='/about' className='mr-8 hover:text-gray-900 '>About us</NavLink></>
+                        <><NavLink to='/blog' className='hover:text-gray-900 '>Blog</NavLink></>
                     </ul>
                 </div>
-                <div className="navbar-end pr-2">
-                    <div className='flex items-center'>
-                        <input type="text" placeholder='Search' className='p-2 w-20 lg:w-40 bg-white text-black focus:outline-none'/>
-                        <button className='bg-[#FFD71B] p-3 text-black'><FaSearch size={16}/></button>
-                    </div>
-                    <div className='ml-2'>        
-                        <div className="indicator">
-                            <span className="indicator-item bg-[#FFD71B]  badge rounded-badge badge-sm text-black px-1">0</span>
-                            <Link to='/cart' className=""><TiShoppingCart size={32}/></Link>
-                        </div>
-                    </div>
+                <div className="navbar-end">
+                   <NavEnd/>
                 </div>
            </div>
       </div>
