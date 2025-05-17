@@ -10,9 +10,9 @@ import "swiper/css/pagination";
 import '../../Css/swiper.css'
 import '../../Css/font.css'
 
-import banner1 from '../../assets/b1.jpg';
-import banner2 from '../../assets/b-2.jpg';
-import banner3 from '../../assets/b-3.jpg';
+import banner1 from '../../assets/banner-1.webp';
+import banner2 from '../../assets/banner-2.jpg';
+import banner3 from '../../assets/banner-3.jpeg';
 
 const bannerData = [
   {
