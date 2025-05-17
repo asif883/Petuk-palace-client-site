@@ -8,7 +8,7 @@
   }
   
   .swiper-pagination-bullet-active {
-    background-color: #fcfcfc !important;
+    background-color: #ffffff !important;
     transform: scale(1.2);
   }
 
@@ -16,7 +16,7 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #FFD71B !important;
+  color: #e4e3e3 !important;
   background-color: rgba(0, 0, 0, 0.5); 
   padding: 20px;
   border-radius: 50%;
