@@ -5,6 +5,11 @@ import Reservation from "../Pages/Reservation";
 import About from "../Pages/About";
 import Blog from "../Pages/Blog";
 import Menu from "../Pages/Menu";
+import PrivateRoute from "./PrivateRoute";
+import Cart from "../Component/DashboardComponent/Cart";
+import Loading from "../Loading/Loading";
+import SignIn from "../Layout/SignIn";
+import SignUp from "../Layout/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -30,9 +35,21 @@ const router = createBrowserRouter([
         {
           path:'/menu',
           element: <Menu/>
-        }
+        },
+        {
+          path: '/cart',
+          element: <PrivateRoute><Cart/></PrivateRoute>
+        },
     ]
   },
+  {
+    path: '/login',
+    element: <SignIn/>
+  },
+  {
+    path:'/signUp',
+    element: <SignUp/>
+  }
 ]);
 
 export default router;
