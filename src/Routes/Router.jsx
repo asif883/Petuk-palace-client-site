@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import Reservation from "../Pages/Reservation";
 import About from "../Pages/About";
 import Blog from "../Pages/Blog";
+import Menu from "../Pages/Menu";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         {
           path: '/blog',
           element:<Blog/>
+        },
+        {
+          path:'/menu',
+          element: <Menu/>
         }
     ]
   },
