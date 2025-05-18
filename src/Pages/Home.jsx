@@ -16,9 +16,9 @@ const Home = () => {
             <Ingredients/>
             <ChefRecommendation/>
             <FoodQuality/>
-            <Review/>
             <Services/>
             <Chef/>
+            <Review/>
         </div>
     );
 };

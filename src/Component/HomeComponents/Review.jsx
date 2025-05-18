@@ -7,21 +7,21 @@ const reviews = [
     {
       "id": 1,
       "name": "Sophia Carter",
-      "image": "https://image.maxpreps.io/rosters/cd2b6c0f-a414-4537-a8d8-354089d85a2c/3/5/9/35954e27-3b79-4c87-965a-006f2893d113/original.jpg?version=638721408818697104&width=1024&crop=1:1,smart",
+      "image": "https://media.licdn.com/dms/image/v2/D4E03AQFfHzLkk7z0jQ/profile-displayphoto-shrink_200_200/B4EZVm1omYGYAY-/0/1741187091301?e=2147483647&v=beta&t=jYQBUgr1JskXG81xfEPJnnRGqVHN2Gb6LZnzpnr89yc",
       "rating": 5,
       "review": "Absolutely loved the food! The flavors were amazing, and the service was top-notch. Highly recommend!"
     },
     {
       "id": 3,
       "name": "Emma Wilson",
-      "image": "https://m.media-amazon.com/images/M/MV5BZDE2NTMxY2EtZDYwNC00YmQ5LTg0ZDgtNzFhMzJlMmYxYWZlXkEyXkFqcGc@._V1_.jpg",
+      "image": "https://photos.psychologytoday.com/69ddc136-8b2e-48d3-ac4e-75857b8b4d33/2/320x400.jpeg",
       "rating": 4.5,
       "review": "One of the best dining experiences I've had. The steak was cooked perfectly, and the desserts were heavenly!"
     },
     {
       "id": 4,
       "name": "Daniel Brown",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMz4TQqmM0TI7Pk9vCbh2O3MeRWNgxj0SZ7g&s",
+      "image": "http://m.media-amazon.com/images/S/pv-target-images/a5ebed349f0d2f7cfec6ad4fa48586273d4991e8b96bb70db071ce1805370d03.jpg",
       "rating": 4,
       "review": "Really enjoyed the meal. Everything was fresh and flavorful. The service could be a bit faster, though."
     }
