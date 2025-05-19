@@ -39,7 +39,8 @@ const SignUp = () => {
                         title: 'Success!',
                         text: 'Registration Successful',
                         icon: 'success',
-                        confirmButtonText: 'Ok'
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: '#18181B'
                       }); 
                 }
                 navigate('/')
@@ -51,7 +52,8 @@ const SignUp = () => {
                 title: 'Error!',
                 text: `${error.message}`,
                 icon: 'error',
-                confirmButtonText: 'Try again'
+                confirmButtonText: 'Try again',
+                confirmButtonColor: '#18181B'
               })
         })
        reset()

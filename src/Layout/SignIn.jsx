@@ -29,10 +29,21 @@ const SignIn = () => {
                 title: 'Success!',
                 text: 'Login Successful',
                 icon: 'success',
-                confirmButtonText: 'Ok'
+                confirmButtonText: 'Ok',
+                confirmButtonColor: '#18181B'
               });
               navigate(location?.state ? location.state : '/');
-              reset()
+             
+        })
+        .catch (error =>{
+        console.error( error)
+        Swal.fire({
+            title: 'Error!',
+            text: `${error.message}`,
+            icon: 'error',
+            confirmButtonText: 'Try again',
+            confirmButtonColor: '#18181B'
+            })
         })
         
     }
