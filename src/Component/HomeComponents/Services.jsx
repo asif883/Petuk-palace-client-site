@@ -25,13 +25,13 @@ const items = [
       "id": 2,
       icon: <MdOutlineDeliveryDining/>,
       "title": "Online Ordering",
-      "description": "Order your favorite meals online and get them delivered hot and fresh to your doorstep."
+      "description": "Order your favorite meals online and get them delivered hot."
     },
     {
       "id": 3,
       icon: <TbToolsKitchen2/>,
       "title": "Catering Services",
-      "description": "Make your events memorable with our special catering services, customized to your needs."
+      "description": "Make your events memorable with our special catering services."
     },
     {
       "id": 4,
@@ -64,15 +64,21 @@ const Services = () => {
                 </p>
 
                 <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
+                modules={[Navigation, Pagination]}
                 spaceBetween={20}
-                slidesPerView={1}
                 breakpoints={{
-                640: { slidesPerView: 1 },
-                1024: { slidesPerView: 3 },
-                }}
-                navigation
-                pagination={{ clickable: true }}
+                0: {
+                  slidesPerView: 1
+                },
+                640: {
+                  slidesPerView: 2
+                },
+                1024: {
+                  slidesPerView: 3
+                }
+              }}
+              navigation
+              pagination={{ clickable: true }}
                
                 className="max-w-7xl mx-auto mt-12"
                 >

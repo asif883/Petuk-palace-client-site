@@ -112,7 +112,7 @@ const popularArticles =  [
 const Articles = () => {
     return (
         <div className='px-5 mt-10 max-w-7xl mx-auto'>
-            <div className='grid grid-cols-12'>
+            <div className='grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12'>
                 <div className='col-span-8'>
                     {
                         blogData.map((data, idx) =><div className='mb-12' key={idx}>
@@ -162,7 +162,7 @@ const Articles = () => {
                     
                 </div>
 
-                <div className='col-span-4 ml-10'>
+                <div className='col-span-4 ml-0 lg:ml-10'>
                     <h2 className='text-2xl font-semibold font-barlow uppercase'>Recent Article</h2>
                     <ul className="space-y-3 mt-5 text-gray-600">
                         {

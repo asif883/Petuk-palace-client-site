@@ -6,7 +6,7 @@ const WelcomeSection = () => {
     return (
         <div className='flex flex-col md:flex-row gap-4 items-center max-w-7xl mx-auto mt-16 px-4'>
             <div className=''>
-                <h1 className="text-5xl font-semibold mb-1 font-barlow text-gray-900 uppercase">
+                <h1 className="text-3xl md:text-5xl font-semibold mb-1 font-barlow text-gray-900 uppercase">
                     OUR STORY
                 </h1>
                 <p className='max-w-3xl my-5 font-roboto text-lg text-gray-600'>
@@ -17,7 +17,7 @@ const WelcomeSection = () => {
             </div>
 
          
-            <div className='w-1/2'>
+            <div className=''>
                 <div className="relative overflow-hidden group flex-1">
                     <img 
                         className="w-full h-[350px] object-cover transition-transform duration-300 group-hover:scale-105" 

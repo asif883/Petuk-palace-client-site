@@ -37,7 +37,7 @@ const FoodQuality = () => {
                 <p className='text-gray-600 text-lg'>Balanced meals made from the freshest picks — delicious, light, and guilt-free.</p>
             </div>
             <div>
-                <div className='flex gap-4 items-center max-w-7xl mx-auto'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center max-w-7xl mx-auto'>
                     {
                         allData?.map((data) => <div className='text-center bg-gray-50 p-4' key={data?.id}>
                             <img className='w-24 h-20 object-cover mx-auto rounded-full' src={data.image} alt="" />

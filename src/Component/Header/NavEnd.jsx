@@ -1,5 +1,6 @@
 import { TiShoppingCart } from "react-icons/ti";
 import { FaSearch } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import useUserData from '../../Hooks/useUserData';
 import { MdOutlineDashboard } from 'react-icons/md';
@@ -10,8 +11,9 @@ const NavEnd = () => {
 
     return (
         <div className='flex gap-4 items-center'>
-            <div className=''>
+            <div className='flex gap-4 items-center'>
                 <Link to='#'><FaSearch size={27}/></Link>
+                <Link to='/dashboard/profile'> <FaRegUserCircle size={26}/> </Link>
             </div>
             <div className='flex items-center'>        
                {

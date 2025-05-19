@@ -6,7 +6,7 @@ const AboutTeam = () => {
     return (
         <div className="max-w-7xl mx-auto space-y-16 mt-8">
             {/* About Us Section */}
-            <div className="flex flex-col md:flex-row items-center gap-5 px-5">
+            <div className="flex flex-col lg:flex-row items-center gap-5 px-5">
                <div className='flex-1'>
                     <h2 className="text-4xl font-barlow uppercase font-bold text-gray-900">Who We Are</h2>
                     <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
@@ -14,7 +14,7 @@ const AboutTeam = () => {
                     Our mission is to offer an unforgettable dining experience with a mix of tradition and innovation.
                     </p>
                </div>
-               <img className='w-1/2' src={team} alt="Team" />
+               <img className='flex-1' src={team} alt="Team" />
             </div>
 
             {/* Why Choose Us Section */}

@@ -56,15 +56,15 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <><NavLink to='/' className='mb-1'>Home</NavLink></>
-                        <><NavLink to='/reservation' className='mb-1'>Reservation</NavLink></>
-                        <><NavLink to='/menu' className='mb-1'>Menu</NavLink></>
-                        <><NavLink to='/about' className='mb-1'>About us</NavLink></>
-                        <><NavLink to='/blog' className=''>Blog</NavLink></>
+                        className="menu menu-sm dropdown-content rounded-box z-[1] mt-3  p-8 bg-black/80 text-white">
+                        <><Link to='/' className='mb-2'>Home</Link></>
+                        <><Link to='/reservation' className='mb-2'>Reservation</Link></>
+                        <><Link to='/menu' className='mb-2'>Menu</Link></>
+                        <><Link to='/about' className='mb-2'>About us</Link></>
+                        <><Link to='/blog' className=''>Blog</Link></>
                     </ul>
                     </div>
-                    <Link to='/' className="text-2xl lg:text-4xl font-barlow font-semibold hover:text-gray-400 text-gray-600">Petuk Palace</Link>
+                    <Link to='/' className="text-xl lg:text-4xl font-barlow font-semibold hover:text-gray-600 text-gray-800">Petuk Palace</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-lg font-barlow text-gray-700 uppercase">

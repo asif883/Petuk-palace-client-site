@@ -64,11 +64,11 @@ const Banner = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <><Link to='/' className='mb-1'>Home</Link></>
-                        <><Link to='/reservation' className='mb-1'>Reservation</Link></>
-                        <><Link to='/menu' className='mb-1'>Menu</Link></>
-                        <><Link to='/about' className='mb-1'>About us</Link></>
+                        className="menu menu-sm dropdown-content rounded-box z-[1] mt-3  p-8 bg-black/80 text-white">
+                        <><Link to='/' className='mb-2'>Home</Link></>
+                        <><Link to='/reservation' className='mb-2'>Reservation</Link></>
+                        <><Link to='/menu' className='mb-2'>Menu</Link></>
+                        <><Link to='/about' className='mb-2'>About us</Link></>
                         <><Link to='/blog' className=''>Blog</Link></>
                     </ul>
                     </div>
