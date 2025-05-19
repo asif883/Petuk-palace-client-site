@@ -12,8 +12,15 @@ import Dashboard from "../Layout/Dashboard";
 import Cart from "../Pages/DashPages/Cart";
 import Overview from "../Pages/DashPages/Overview";
 import AllUser from "../Pages/DashPages/AllUser";
+import MyOrders from "../Pages/DashPages/MyOrder";
+import Profile from "../Pages/DashPages/Profile";
+import DashMenu from "../Pages/DashPages/DashMenu";
+import AddMenu from "../Pages/DashPages/AddMenu";
+import PendingOrder from "../Pages/DashPages/PendingOrder";
+
 
 const router = createBrowserRouter([
+ 
   {
     path: "/",
     element: <Main/>,
@@ -63,6 +70,26 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/users',
         element:<AllUser/>
+      },
+      {
+        path: '/dashboard/my-order',
+        element: <MyOrders/>
+      },
+      {
+        path:'/dashboard/profile',
+        element:<Profile/>
+      },
+      {
+        path:'/dashboard/menu',
+        element: <DashMenu/>
+      },
+      {
+        path:'/dashboard/add-menu',
+        element: <AddMenu/>
+      },
+      {
+        path: '/dashboard/check-order',
+        element: <PendingOrder/>
       }
     ]
   }

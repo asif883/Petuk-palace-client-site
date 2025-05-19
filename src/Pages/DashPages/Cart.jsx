@@ -51,6 +51,42 @@ const Cart = () => {
     });
   };
 
+
+const handleOrder = () => {
+  const orderData = {
+    userEmail: user.email,
+    items: cartItems,
+    totalAmount: totalPrice,
+    status: 'pending',
+    orderDate: new Date()
+  };
+
+  axios.post('http://localhost:3000/orders', orderData)
+    .then(res => {
+      if (res.data.insertedId) {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Your order has been placed.',
+          icon: 'success',
+          confirmButtonColor: '#18181B'
+        });
+
+        axios.delete(`http://localhost:3000/deleteItems/${user?.email}`)
+          .then(res => {
+            console.log("Cart cleared:", res.data);
+            setCartItems([]);
+          });
+      }
+    })
+    .catch(err => {
+      console.error("Error placing order:", err);
+      Swal.fire("Error", "Failed to place order. Try again later.", "error");
+    });
+};
+
+
+
+
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
 
   return (
@@ -100,6 +136,7 @@ const Cart = () => {
                     <span>${totalPrice.toFixed(2)}</span>
                 </div>
                 <button
+                    onClick={()=> handleOrder()}
                     disabled={cartItems.length === 0}
                     className="w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition cursor-pointer"
                 >

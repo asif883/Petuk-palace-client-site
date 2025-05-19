@@ -22,6 +22,12 @@ const AdminRoutes = [
 
     {
        id: 2,
+       route: "/dashboard/check-order" ,
+       icon: <MdOutlineFoodBank size={20}/>,
+       name: 'Pending Order'
+    },
+    {
+       id: 2,
        route: "/dashboard/menu" ,
        icon: <MdOutlineFoodBank size={20}/>,
        name: 'Menu'
@@ -71,6 +77,11 @@ const Sidebar = () => {
                 <GrOverview size={18}/>
                 < >Overview</>
             </NavLink>
+            <NavLink to='/dashboard/profile'   className={({ isActive }) =>
+             `border px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center ${isActive ?  "bg-gray-700 text-gray-200" : "bg-white"}`}>
+                <ImProfile size={18}/>
+                < >Profile</>
+            </NavLink>
             {
                 role === "admin" && 
                 <>
@@ -106,11 +117,7 @@ const Sidebar = () => {
                 </>
             }
             
-            <NavLink to='/dashboard/profile'   className={({ isActive }) =>
-             `border px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center ${isActive ?  "bg-gray-700 text-gray-200" : "bg-white"}`}>
-                <ImProfile size={18}/>
-                < >Profile</>
-            </NavLink>
+
             <NavLink to='/'   className={({ isActive }) =>
                 `border px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center ${isActive ?  "bg-gray-700 text-gray-200" : "bg-white"}`}>
                  <IoHomeOutline size={18}/>
