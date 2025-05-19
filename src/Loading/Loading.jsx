@@ -5,7 +5,7 @@ const Loading = () => {
     return (
         <div className='flex items-center justify-center min-h-screen'>
             <Atom 
-            color="#7c847c" 
+            color="#1E2939" 
             size="medium" 
             text="" 
             textColor="#65d30b" 

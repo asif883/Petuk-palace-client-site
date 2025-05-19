@@ -5,9 +5,9 @@ import { PiUsersThreeBold } from "react-icons/pi";
 import { IoHomeOutline } from "react-icons/io5";
 import { CiLogout } from "react-icons/ci";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
-import { BiCollection } from "react-icons/bi";
+import { MdOutlineFoodBank } from "react-icons/md";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { FaRegHeart } from "react-icons/fa6";
+import { GiFoodTruck } from "react-icons/gi";
 import useAuth from '../../Hooks/useAuth';
 import useUserData from '../../Hooks/useUserData';
 
@@ -16,36 +16,35 @@ const AdminRoutes = [
     {
        id: 1,
        route: "/dashboard/users" ,
-       icon: <PiUsersThreeBold/>,
+       icon: <PiUsersThreeBold size={18}/>,
        name: 'All-User'
-    }
-]
-const SellerRoutes = [
-    {
-       id: 1,
-       route: "/dashboard/my-product" ,
-       icon: <BiCollection/>,
-       name: 'My Product'
     },
+
     {
        id: 2,
-       route: "/dashboard/add-product" ,
-       icon: <MdOutlineAddCircleOutline/>,
-       name: 'Add Product'
+       route: "/dashboard/menu" ,
+       icon: <MdOutlineFoodBank size={20}/>,
+       name: 'Menu'
+    },
+    {
+       id: 3,
+       route: "/dashboard/add-menu" ,
+       icon: <MdOutlineAddCircleOutline size={20}/>,
+       name: 'Add Menu'
     }
 ]
 const BuyerRoutes = [
     {
        id: 1,
        route: "/dashboard/my-cart" ,
-       icon: <MdOutlineShoppingCart/>,
+       icon: <MdOutlineShoppingCart size={18}/>,
        name: 'My Cart'
     },
     {
-       id: 1,
-       route: "/dashboard/my-wishList" ,
-       icon: <FaRegHeart/>,
-       name: 'My Wish List'
+       id: 2,
+       route: "/dashboard/my-order" ,
+       icon: <GiFoodTruck size={18}/>,
+       name: 'My Order'
     }
 ]
 
@@ -54,7 +53,6 @@ const Sidebar = () => {
     const navigate = useNavigate()
 
     const {role} = useUserData()
-    console.log(role);
 
     const handleLogout= () =>{
         logout()
@@ -70,7 +68,7 @@ const Sidebar = () => {
             </div>
             <NavLink to='/dashboard/overview' className={({ isActive }) =>
                      `border px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center ${isActive ? "bg-gray-700 text-gray-200" : "bg-white"}`}>
-                <GrOverview/>
+                <GrOverview size={18}/>
                 < >Overview</>
             </NavLink>
             {
@@ -87,21 +85,7 @@ const Sidebar = () => {
               }
                 </>
             }
-            {
-                role === "seller" && 
-                <>
-              {
-                SellerRoutes.map((r, idx)=>
-                    <NavLink to={`${r.route}`
-                    } key={idx} className={({ isActive }) =>
-                     `border px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center ${isActive ? "bg-gray-700 text-gray-200" : "bg-white"}`}>
-                        <>{r.icon}</>
-                        <>{r.name}</>
-                    </NavLink>   
-                )
-              }
-                </>
-            }
+
             {
                 role === "buyer" && 
                 <>
@@ -124,16 +108,16 @@ const Sidebar = () => {
             
             <NavLink to='/dashboard/profile'   className={({ isActive }) =>
              `border px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center ${isActive ?  "bg-gray-700 text-gray-200" : "bg-white"}`}>
-                <ImProfile/>
+                <ImProfile size={18}/>
                 < >Profile</>
             </NavLink>
             <NavLink to='/'   className={({ isActive }) =>
                 `border px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center ${isActive ?  "bg-gray-700 text-gray-200" : "bg-white"}`}>
-                 <IoHomeOutline/>
+                 <IoHomeOutline size={18}/>
                 <>Home</>
             </NavLink>
             <button onClick={handleLogout} className='bg-white border w-full px-4 py-2 text-center font-bold rounded-lg flex gap-2 items-center cursor-pointer'>
-                 <CiLogout/>
+                 <CiLogout size={18}/>
                  <>Logout</>
             </button>
            

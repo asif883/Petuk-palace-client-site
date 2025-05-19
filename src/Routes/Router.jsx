@@ -11,6 +11,7 @@ import SignUp from "../Layout/SignUp";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../Pages/DashPages/Cart";
 import Overview from "../Pages/DashPages/Overview";
+import AllUser from "../Pages/DashPages/AllUser";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/overview',
         element: <Overview/>
+      },
+      {
+        path: '/dashboard/users',
+        element:<AllUser/>
       }
     ]
   }
