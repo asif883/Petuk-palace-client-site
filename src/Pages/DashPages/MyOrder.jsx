@@ -12,7 +12,7 @@ const MyOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/orders/${user?.email}`);
+        const res = await axios.get(`https://petuk-palace-server.vercel.app/orders/${user?.email}`);
         setOrders(res.data);
         setLoading(false);
       } catch (error) {
@@ -34,7 +34,7 @@ const MyOrders = () => {
       confirmButtonText: "Yes, Cancel it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/delete/${id}`)
+        axios.delete(`https://petuk-palace-server.vercel.app/delete/${id}`)
           .then(() => {
             setOrders(orders.filter(item => item._id !== id));
             Swal.fire({

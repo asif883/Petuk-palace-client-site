@@ -11,7 +11,7 @@ const PendingOrder = () => {
     useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/allOrder`);
+        const res = await axios.get(`https://petuk-palace-server.vercel.app/allOrder`);
         setOrders(res.data);
         setLoading(false);
       } catch (error) {

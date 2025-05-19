@@ -13,7 +13,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/cart/${user?.email}`);
+        const res = await axios.get(`https://petuk-palace-server.vercel.app/cart/${user?.email}`);
         setCartItems(res.data);
         setLoading(false)
       } catch (error) {
@@ -36,7 +36,7 @@ const Cart = () => {
       confirmButtonText: "Yes, remove it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/deleteItem/${id}`)
+        axios.delete(`https://petuk-palace-server.vercel.app/deleteItem/${id}`)
           .then(() => {
             setCartItems(cartItems.filter(item => item._id !== id));
             Swal.fire({
@@ -61,7 +61,7 @@ const handleOrder = () => {
     orderDate: new Date()
   };
 
-  axios.post('http://localhost:3000/orders', orderData)
+  axios.post('https://petuk-palace-server.vercel.app/orders', orderData)
     .then(res => {
       if (res.data.insertedId) {
         Swal.fire({
@@ -71,7 +71,7 @@ const handleOrder = () => {
           confirmButtonColor: '#18181B'
         });
 
-        axios.delete(`http://localhost:3000/deleteItems/${user?.email}`)
+        axios.delete(`https://petuk-palace-server.vercel.app/deleteItems/${user?.email}`)
           .then(res => {
             console.log("Cart cleared:", res.data);
             setCartItems([]);

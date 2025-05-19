@@ -31,7 +31,7 @@ const SignUp = () => {
 
         createUser( email, password )
         .then( ()=>{
-            axios.post('http://localhost:3000/user', userInfo)
+            axios.post('https://petuk-palace-server.vercel.app/user', userInfo)
             .then((res)=>{
                 // console.log(res.data);
                 if(res.data.insertedId){

@@ -14,10 +14,10 @@ const Profile = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:3000/cart/${user.email}`)
+      axios.get(`https://petuk-palace-server.vercel.app/cart/${user.email}`)
         .then(res => setCartItems(res.data));
 
-      axios.get(`http://localhost:3000/orders/${user.email}`)
+      axios.get(`https://petuk-palace-server.vercel.app/orders/${user.email}`)
         .then(res => setOrders(res.data));
     }
   }, [user]);

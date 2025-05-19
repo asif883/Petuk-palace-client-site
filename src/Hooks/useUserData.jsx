@@ -8,7 +8,7 @@ const useUserData = () => {
 
     useEffect(()=> {
         const fetch =() =>{
-            axios.get(`http://localhost:3000/users/${user?.email}`)
+            axios.get(`https://petuk-palace-server.vercel.app/users/${user?.email}`)
             .then( res =>{
                 setUserData(res.data)
             })

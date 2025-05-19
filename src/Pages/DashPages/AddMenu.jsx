@@ -22,7 +22,7 @@ const AddMenu = () => {
     };
 
     try {
-      const res = await axios.post('http://localhost:3000/add-menu', menuItem);
+      const res = await axios.post('https://petuk-palace-server.vercel.app/add-menu', menuItem);
       if (res.data.insertedId) {
         Swal.fire({
           icon: 'success',

@@ -100,7 +100,7 @@ const FoodList = () => {
 
     useEffect(()=>{
       const fetch= () =>{
-       axios.get(`http://localhost:3000/cart/${user?.email}`)
+       axios.get(`https://petuk-palace-server.vercel.app/cart/${user?.email}`)
          .then(res =>{
           console.log(res.data);
           setCartItems(res.data)
@@ -110,7 +110,7 @@ const FoodList = () => {
    },[user])
 
    useEffect(()=> {
-      fetch('http://localhost:3000/menu')
+      fetch('https://petuk-palace-server.vercel.app/menu')
       .then( res => res.json())
       .then( data => {
           setMenuData(data)
@@ -147,7 +147,7 @@ const FoodList = () => {
       });
     }
 
-    axios.post('http://localhost:3000/cart', cartInfo)
+    axios.post('https://petuk-palace-server.vercel.app/cart', cartInfo)
       .then(res => {
         if (res.data.insertedId) {
           setCartItems(prev => [...prev, cartInfo]);
