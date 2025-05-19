@@ -11,7 +11,7 @@ const NavEnd = () => {
             <div className=''>        
                <div className="indicator">
                   <span className="indicator-item bg-gray-text-gray-400  badge rounded-badge badge-sm text-black px-1">0</span>
-                    <Link to='/cart' className=""><TiShoppingCart size={24}/></Link>
+                    <Link to='/dashboard/my-cart' className=""><TiShoppingCart size={24}/></Link>
                 </div>
             </div>
         </div>

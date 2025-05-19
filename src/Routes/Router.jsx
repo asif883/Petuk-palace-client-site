@@ -6,10 +6,11 @@ import About from "../Pages/About";
 import Blog from "../Pages/Blog";
 import Menu from "../Pages/Menu";
 import PrivateRoute from "./PrivateRoute";
-import Cart from "../Component/DashboardComponent/Cart";
-import Loading from "../Loading/Loading";
 import SignIn from "../Layout/SignIn";
 import SignUp from "../Layout/SignUp";
+import Dashboard from "../Layout/Dashboard";
+import Cart from "../Pages/DashPages/Cart";
+import Overview from "../Pages/DashPages/Overview";
 
 const router = createBrowserRouter([
   {
@@ -36,10 +37,6 @@ const router = createBrowserRouter([
           path:'/menu',
           element: <Menu/>
         },
-        {
-          path: '/cart',
-          element: <PrivateRoute><Cart/></PrivateRoute>
-        },
     ]
   },
   {
@@ -49,6 +46,20 @@ const router = createBrowserRouter([
   {
     path:'/signUp',
     element: <SignUp/>
+  },
+  {
+    path: '/dashboard',
+    element:<PrivateRoute><Dashboard/></PrivateRoute>,
+    children: [
+      {
+        path: '/dashboard/my-cart',
+        element: <Cart/>
+      },
+      {
+        path: '/dashboard/overview',
+        element: <Overview/>
+      }
+    ]
   }
 ]);
 
