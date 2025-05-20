@@ -58,7 +58,7 @@ const items = [
 const ChefRecommendation = () => {
   return (
     <div
-      className="relative min-h-screen md:h-[750px] bg-fixed"
+      className="relative md:h-[750px] bg-fixed"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
@@ -80,7 +80,7 @@ const ChefRecommendation = () => {
         </p>
 
         {/* Swiper Section */}
-        <div className="max-w-7xl mx-auto mt-12 px-2 sm:px-4 md:px-6">
+        <div className="max-w-7xl mx-auto min-h-[500px] mt-12 px-2 sm:px-4 md:px-6">
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={20}
@@ -99,10 +99,10 @@ const ChefRecommendation = () => {
             pagination={{ clickable: true }}
           >
             {items.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                  {/* Image Section */}
-                  <div className="relative aspect-[4/3]">
+              <SwiperSlide className='flex h-auto' key={item.id}>
+               <div className="bg-gray-100 flex flex-col shadow-md hover:shadow-xl h-[400px] w-full">
+                {/* Image Section */}
+                <div className="relative h-[250px]">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -111,16 +111,19 @@ const ChefRecommendation = () => {
                     <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-gray-200 text-black text-sm px-4 py-2 rounded-full shadow-md font-bold">
                       ${item.price}
                     </div>
-                  </div>
-
-                  {/* Text Section */}
-                  <div className="p-6 pt-10 text-center">
-                    <h2 className="text-xl font-bold font-barlow uppercase text-gray-800">
-                      {item.name}
-                    </h2>
-                    <p className="text-gray-600 mt-3 text-sm">{item.description}</p>
-                  </div>
                 </div>
+
+                {/* Text Section */}
+                <div className="p-6 pt-10 text-center flex-1 flex flex-col justify-between">
+                    <div>
+                      <h2 className="text-xl font-bold font-barlow uppercase text-gray-800">
+                        {item.name}
+                      </h2>
+                      <p className="text-gray-600 mt-3 text-sm">{item.description}</p>
+                    </div>
+                </div>
+               </div>
+
               </SwiperSlide>
             ))}
           </Swiper>

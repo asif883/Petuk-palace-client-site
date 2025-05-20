@@ -52,7 +52,7 @@ const items = [
 
 const Services = () => {
     return (
-        <div className="relative h-[550px] bg-fixed" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="relative h-[580px] bg-fixed" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             {/* Black Overlay */}
             <div className="absolute inset-0 bg-black/80"></div> 
 

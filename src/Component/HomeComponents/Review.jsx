@@ -21,7 +21,7 @@ const reviews = [
     {
       "id": 4,
       "name": "Daniel Brown",
-      "image": "http://m.media-amazon.com/images/S/pv-target-images/a5ebed349f0d2f7cfec6ad4fa48586273d4991e8b96bb70db071ce1805370d03.jpg",
+      "image": "https://image.tmdb.org/t/p/w500/xDsPJNDnrn3N0jelVrxdOchzhoo.jpg",
       "rating": 4,
       "review": "Really enjoyed the meal. Everything was fresh and flavorful. The service could be a bit faster, though."
     }

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FaSearch } from "react-icons/fa";
-import { TiShoppingCart } from "react-icons/ti";
 import '../../CSS/font.css'
 import '../../CSS/nav.css'
 import NavEnd from './NavEnd';

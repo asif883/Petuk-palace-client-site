@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import '../../Css/swiper.css'
+import '../../CSS/slide.css'
 import '../../Css/font.css'
 
 import banner1 from '../../assets/banner-1.webp';
@@ -15,6 +15,7 @@ import banner2 from '../../assets/banner-2.jpg';
 import banner3 from '../../assets/banner-3.jpeg';
 import { Link } from "react-router-dom";
 import NavEnd from "../Header/NavEnd";
+
 
 const bannerData = [
   {

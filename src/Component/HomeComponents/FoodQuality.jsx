@@ -39,7 +39,7 @@ const FoodQuality = () => {
             <div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center max-w-7xl mx-auto'>
                     {
-                        allData?.map((data) => <div className='text-center bg-gray-50 p-4' key={data?.id}>
+                        allData?.map((data) => <div className='text-center bg-gray-50 p-4 h-[230px]' key={data?.id}>
                             <img className='w-24 h-20 object-cover mx-auto rounded-full' src={data.image} alt="" />
                             <h2 className='text-xl font-semibold my-3 font-barlow uppercase'>{data.title}</h2>
                             <p className='text-gray-600'>{data.description}</p>

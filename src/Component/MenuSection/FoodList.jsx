@@ -123,7 +123,7 @@ const FoodList = () => {
       return navigate('/login');
     }
 
-    const title = item.name;
+    const title = item.title;
     const userEmail = user?.email;
     const image = item.image;
     const price = parseFloat(item.price);
@@ -153,7 +153,7 @@ const FoodList = () => {
           setCartItems(prev => [...prev, cartInfo]);
           Swal.fire({
             title: 'Success!',
-            text: `${item?.name} added to Your cart`,
+            text: `${item?.title} added to Your cart`,
             icon: 'success',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#18181B'
@@ -175,7 +175,7 @@ const FoodList = () => {
                   className="border border-gray-300 p-4"
                 >
                   <div className='flex items-center justify-between'>
-                      <h1 className='text-xl uppercase font-barlow font-semibold'>{item?.title}</h1>
+                      <h1 className='text-lg md:text-xl uppercase font-barlow font-semibold'>{item?.title}</h1>
                       <p className='bg-gray-100 p-1 rounded-full font-semibold'>${item?.price}</p>
                   </div>
                   <p className='my-1 text-gray-600'>{item?.description}</p>

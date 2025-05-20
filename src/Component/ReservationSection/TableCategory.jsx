@@ -33,7 +33,7 @@ const TableCategory = () => {
                 <h1 className="text-4xl font-bold font-barlow">Choose Your Perfect Dining Experience</h1>
                 <p className='text-gray-700 text-lg mt-3'>Select from our carefully curated table options—whether it’s a cozy gathering, a VIP experience, or a romantic evening. <br /> Reserve now and enjoy exceptional dining tailored to your preference!</p>
             </div>
-            <div className='flex gap-10 flex-col lg:flex-row items-center mt-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-center mt-8'>
                 {
                     tables?.map((table) => 
                         <div key={table.id}>
