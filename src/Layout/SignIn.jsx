@@ -67,7 +67,7 @@ const SignIn = () => {
     return (
         <div className="min-h-screen flex bg-gray-100">
             {/* Left Section */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-gradient-to-b from-gray-200 to-white p-8 rounded-l-3xl">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-center bg-gradient-to-b from-gray-200 to-white p-8 rounded-l-3xl">
                 <div className="w-full max-w-md">
                 <div className="text-left mb-6">
                     <Link to='/' className='text-xl font-semibold flex items-center gap-1 mb-3 hover:text-gray-600 text-gray-900'><FaArrowLeft/>Back Home</Link>
@@ -145,7 +145,7 @@ const SignIn = () => {
             </div>
 
             {/* Right Section */}
-             <div className="hidden md:block md:w-1/2 ">
+             <div className="hidden lg:block  lg:w-1/2">
                 <img
                 src={img}
                 alt="LOgin"
