@@ -4,26 +4,30 @@ Welcome to **Petuk Palace** – a modern and responsive food ordering web applic
 
 ---
 
-## 🚀 Live Preview
-
-🌐 [View Website](https://petuk-palace.web.app) 
+## 🚀 Live Preview [View Website](https://petuk-palace.web.app) 
 
 ---
 
 
 ## ⚙️ Tech Stack
 
-- **React.js** – Frontend Library
-- **Tailwind CSS** – Utility-first CSS Framework
-- **Swiper.js** – Carousel and Slider integration
-- **React Icons** – Beautiful, scalable icons
-- **Firebase** - Sing In , Sing Up and Deploy 
--  **Express.js** - Backend 
--  **Node.js** - Backend 
--  **MongoDB** -Database
+### Frontend
+- React.js
+- React Router DOM
+- Tailwind CSS
+- Swiper.js
+- Framer Motion
+- React Icons
+- Firebase Authentication & Deployment
+---
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT
+- Vercel (Deployment)
 
 ---
-
 ## ✨ Features
 
 - 🍔 Dynamic food menu cards
