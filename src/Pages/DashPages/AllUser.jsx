@@ -2,26 +2,46 @@ import React, { useEffect, useState } from 'react';
 import { RiAdminLine } from 'react-icons/ri';
 import { TiUserDeleteOutline } from 'react-icons/ti';
 import Loading from '../../Loading/Loading';
+import axios from 'axios';
+import useUserData from '../../Hooks/useUserData';
 
 const AllUser = () => {
-    const [loading , setLoading] = useState(true) 
-    const [ users , setUsers ]= useState([])
+  const { role } = useUserData()
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
-        fetch('https://petuk-palace-server.vercel.app/users')
-        .then( res => res.json())
-        .then( data => {
-            setUsers(data)
-            setLoading(false)
-        })
-    }, [])
+  useEffect(() => {
+    const token = localStorage.getItem('access-token');
+
+    axios.get('https://petuk-palace-server.vercel.app/users', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then(res => {
+      setUsers(res.data);
+      setLoading(false);
+    })
+    .catch(err => {
+      console.error("Failed to fetch users:", err);
+      setLoading(false);
+    });
+  }, []);
+
 
     return (
       <div className="overflow-x-auto">
           {
             loading ? <Loading/>
             :
-             <table className="table">
+             <>
+             {
+                role !== 'admin' ? 
+                <div className='flex items-center justify-center min-h-screen'>
+                    <h1 className='text-red-600 font-semibold text-2xl'>Only Admin Can Access The Users</h1>
+                </div>
+                :
+                <table className="table">
                  
                 <thead>
                     <tr className="bg-gray-100 font-bold text-lg">
@@ -36,7 +56,7 @@ const AllUser = () => {
                 <tbody>
                     {/* row 1 */}
                     {
-                        users.map((user, idx)=> 
+                        users?.map((user, idx)=> 
                         
                         <tr key={idx} >
                     <th>
@@ -77,6 +97,8 @@ const AllUser = () => {
                 </tbody>
           
             </table>
+             }
+             </>
           }
       </div>
     );

@@ -22,7 +22,7 @@ const DashMenu = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {menuData?.map((item) => (
                 <div
-                  key={item.id}
+                  key={item._id}
                   className="border border-gray-300 p-4"
                 >
                   <div className='flex items-center justify-between'>

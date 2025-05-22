@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../Firebase/FirebaseConfig.';
 import { GoogleAuthProvider } from 'firebase/auth';
+import axios from 'axios';
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app)
@@ -14,7 +15,19 @@ const Context = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth , currentUser=>{
             setUser(currentUser)
-            setLoading(false)
+            if(currentUser){
+                axios.post(`https://petuk-palace-server.vercel.app/authentication`, {email: currentUser?.email})
+                .then(res => {
+                    if(res.data){
+                        localStorage.setItem('access-token', res?.data?.token)
+                        setLoading(false)
+                    }
+                }) 
+            }
+            else{
+                localStorage.removeItem('access-token')
+                setLoading(false)
+            }
         });
 
         return ()=>{

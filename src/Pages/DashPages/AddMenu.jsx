@@ -2,8 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import useUserData from '../../Hooks/useUserData';
 
 const AddMenu = () => {
+  const { role } = useUserData()
+  const token = localStorage.getItem('access-token');
   const {
     register,
     handleSubmit,
@@ -22,7 +25,11 @@ const AddMenu = () => {
     };
 
     try {
-      const res = await axios.post('https://petuk-palace-server.vercel.app/add-menu', menuItem);
+      const res = await axios.post('https://petuk-palace-server.vercel.app/add-menu', menuItem,
+        {
+          headers: {Authorization: `Bearer ${token}`}
+        }
+      )
       if (res.data.insertedId) {
         Swal.fire({
           icon: 'success',
@@ -105,12 +112,22 @@ const AddMenu = () => {
         </div>
 
         {/* Submit */}
-        <button
-          type="submit"
-          className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition cursor-pointer"
-        >
-          Add Menu Item
+       <button
+            type="submit"
+            className={`px-6 py-2 rounded transition ${
+              role === 'admin'
+                ? 'bg-black text-white hover:bg-gray-800 cursor-pointer'
+                : 'bg-gray-400 text-white cursor-not-allowed'
+            }`}
+            disabled={role !== 'admin'}
+          >
+            Add Menu Item
         </button>
+
+          {role !== 'admin' && (
+            <p className="text-sm text-red-500 mt-2">Only admins can add menu items.</p>
+          )}
+
       </form>
     </div>
   );
