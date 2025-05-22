@@ -4,9 +4,9 @@ Welcome to **Petuk Palace** – a modern and responsive food ordering web applic
 
 ---
 
-## 🚀 Live Preview [View Website](https://petuk-palace.web.app) 
+## 🚀 [View Website](https://petuk-palace.web.app) 
 
----
+
 
 
 ## ⚙️ Tech Stack
